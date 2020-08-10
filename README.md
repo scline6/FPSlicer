@@ -19,6 +19,6 @@ Disadvantages:
 1. The GUI gets pixelated once you stick it in the tablet viewport.  Thus creative ideas are subject to some limitations.  I do not have VR googles, but I am curious how pixelated it would look in the VR world.
 2. It seems difficult to make a very professional/commercial looking GUI of the type Qt provides.  I am sure with Godot themes that anything is possible.  But it is a question of how much effort it takes to get there.
 
-Here is a screenshot of FPSlicer running on a desktop computer.  The tablet in the left half of the view window moves with the first-person.  First-person movement is controlled with arrow keys.
+Here is a screenshot of FPSlicer running on a desktop computer.  The tablet in the left half of the view window moves with the first-person.  First-person movement is controlled with arrow keys.  In the view below, I came around the the other side of the table and picked a perspective that shows the door and ceiling too.
 
 ![FPSlicer](https://github.com/scline6/FPSlicer/blob/master/FPSlicerDemoImage1.png?raw=true)
