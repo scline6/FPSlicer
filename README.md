@@ -21,4 +21,4 @@ Disadvantages:
 
 Here is a screenshot of FPSlicer running on a desktop computer.  The tablet in the left half of the view window moves with the first-person.  First-person movement is controlled with arrow keys.
 
-![FPSlicer](https://github.com/scline6/FPSlicer/FPSlicerDemoImage1.png?raw=true)
+![FPSlicer](https://github.com/scline6/FPSlicer/edit/master/FPSlicerDemoImage1.png?raw=true)
