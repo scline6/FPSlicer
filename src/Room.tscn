@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Room.gd" type="Script" id=1]
+[ext_resource path="res://Box.tscn" type="PackedScene" id=2]
+
+[node name="Room" type="Spatial"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Floor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0 )
+Box_Size = Vector3( 200.1, 0.05, 200.1 )
+Surface_Material = null
+
+[node name="Ceiling" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200.025, 0 )
+Box_Size = Vector3( 200.1, 0.05, 200.1 )
+Surface_Material = null
+
+[node name="Wall1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.025, 100, 0 )
+Box_Size = Vector3( 0.05, 200, 200 )
+Surface_Material = null
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100.025, 100, 0 )
+Box_Size = Vector3( 0.05, 200, 200 )
+Surface_Material = null
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, -100.025 )
+Box_Size = Vector3( 200.05, 200, 0.05 )
+Surface_Material = null
+
+[node name="Wall4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 100.025 )
+Box_Size = Vector3( 200.05, 200, 0.05 )
+Surface_Material = null

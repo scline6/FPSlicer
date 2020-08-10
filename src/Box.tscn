@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends StaticBody
+
+
+export(Vector3)  var Box_Size         = Vector3(2.0, 2.0, 2.0) setget set_box_size,         get_box_size
+export(Material) var Surface_Material = null                   setget set_surface_material, get_surface_material
+
+
+
+
+func set_box_size(new_box_size):
+	if $MeshInstance == null or $CollisionShape == null:
+		return
+	if new_box_size != Box_Size:
+		Box_Size = new_box_size
+		$MeshInstance.mesh.set_size(Box_Size)
+		$CollisionShape.shape.set_extents(0.5 * Box_Size)
+
+
+func get_box_size():
+	return Box_Size
+
+
+func set_surface_material(new_surface_material):
+	if $MeshInstance == null:
+		return
+	if new_surface_material != $MeshInstance.material_override:
+		Surface_Material = new_surface_material
+		$MeshInstance.material_override = Surface_Material
+
+
+func get_surface_material():
+	return Surface_Material
+
+
+func _ready():
+	pass
+
+
+"
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="CubeMesh" id=3]
+resource_local_to_scene = true
+material = SubResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+
+[sub_resource type="BoxShape" id=5]
+resource_local_to_scene = true
+
+[node name="Box" type="StaticBody"]
+script = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0489654, 0.026593, 0.0101962 )
+shape = SubResource( 5 )

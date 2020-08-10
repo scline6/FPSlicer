@@ -1,0 +1,61 @@
+extends MeshInstance
+
+
+var vertices = []
+var triangles = []
+
+
+func _ready():
+	pass # Replace with function body.
+
+
+func read_STL_ascii(filepath):
+	var file = File.new()
+	var result = file.open(filepath, File.READ)
+	if result != 0:
+		return
+	while not file.eof_reached():
+		var line = file.get_line()
+		var tokens = line.split(" ",false)
+		if "solid" in line:
+			#var name = tokens[1]
+			pass
+		elif "facet normal" in line:
+			#var normal = Vector3(float(tokens[2]), float(tokens[3]), float(tokens[4]))
+			pass
+		elif "outer loop" in line:
+			pass
+		elif "vertex" in line:
+			var r = Vector3(float(tokens[1]), float(tokens[2]), float(tokens[3]))
+			self.vertices.push_back(r)
+		elif "endloop" in line:
+			var n = self.vertices.size()
+			self.triangles.push_back([n-3, n-2, n-1])
+		elif "endfacet" in line:
+			pass
+		elif "endsolid" in line:
+			return
+
+
+func draw_mesh(swapAxes):
+	var st = SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for vertex in self.vertices:
+		var r = vertex
+		if swapAxes:
+			r = Vector3(vertex.y, vertex.z, vertex.x)
+		st.add_vertex(r)
+	for triangle in self.triangles:
+		st.add_index(triangle[0])
+		st.add_index(triangle[1])
+		st.add_index(triangle[2])
+	st.generate_normals()
+	self.mesh = st.commit()
+
+
+func _on_FileDialog_file_selected(path):
+	var newMesh = self    #need to figure out instancing
+	#var newMesh = preload("STL_Mesh.gd").new()
+	newMesh.read_STL_ascii(path)
+	newMesh.draw_mesh(true)
+

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Door.gd" type="Script" id=1]
+[ext_resource path="res://Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rod.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=4]
+
+[node name="Door" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 100, 0 )
+
+[node name="Panel" parent="Spatial" instance=ExtResource( 2 )]
+Box_Size = Vector3( 80, 6, 200 )
+Surface_Material = null
+
+[node name="Rod" parent="Spatial" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.375, 0, -20 )
+Cylinder_Height = 14.4
+Bottom_Radius = 1.5
+Top_Radius = 1.5
+Surface_Material = null
+
+[node name="Knob1" parent="Spatial" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.375, -7.2, -20 )
+Ball_Radius = 3.75
+Ball_Height = 1.5
+Surface_Material = null
+
+[node name="Knob2" parent="Spatial" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.375, 7.2, -20 )
+Ball_Radius = 3.75
+Ball_Height = 1.5
+Surface_Material = null

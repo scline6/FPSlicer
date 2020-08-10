@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Me.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 11.0
+height = 11.0
+
+[node name="Me" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="Rotation_Helper" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Rotation_Helper"]
+current = true
+far = 1000.0
