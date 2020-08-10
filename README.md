@@ -16,9 +16,9 @@ Advantages:
 8. BEST OF ALL: It is pretty easy to do creative things with your UI.  In this case, the first-person carries a tablet device with a viewport pane, and the GUI resides there.  This way you can walk around the 3d print room in virtual reality and operate controls on your virtual tablet.
 
 Disadvantages:
-1. The GUI in viewport tricks gets pixelated.  Thus creative ideas are subject to some limitations.  I do not have VR googles, but I am curious how pixelated it would look in the VR world.
-2. It seems difficult to make a very professional/commercial looking GUI of the type Qt provides.  I am sure with themes that anything is possible.  But it is a question of how much effort it takes to get there.
+1. The GUI gets pixelated once you stick it in the tablet viewport.  Thus creative ideas are subject to some limitations.  I do not have VR googles, but I am curious how pixelated it would look in the VR world.
+2. It seems difficult to make a very professional/commercial looking GUI of the type Qt provides.  I am sure with Godot themes that anything is possible.  But it is a question of how much effort it takes to get there.
 
 Here is a screenshot of FPSlicer running on a desktop computer.  The tablet in the left half of the view window moves with the first-person.  First-person movement is controlled with arrow keys.
 
-![FPSlicer](https://github.com/scline/FPSlicer/FPSlicerDemoImage1.png?raw=true)
+![FPSlicer](https://github.com/scline6/FPSlicer/FPSlicerDemoImage1.png?raw=true)
